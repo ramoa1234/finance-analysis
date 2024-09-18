@@ -1,28 +1,25 @@
 import torch
-import torchtext
-from tokenizer import get_tokenizer
-path = "dataset path"
+import torch.nn as nn
 
-#load first 40,000 lines to train,use last 10 to test
-
-
-#data needs to be tokenized and have punction marks and things removed
 def load_data():
-    tokenizer = get_tokenizer("basic english")
-    tokens = tokenizer("this is a sentence")
-    print(tokens)
-
-def train_data():
     pass
 
-class model():
-    def __init__(self):
+class RNN(nn.Module):
+    def __init__(self, input_size, output_size, hidden_dim, n_layers):
         super().__init__()
+        self.hidden_dim = hidden_dim
+        self.rnn = nn.RNN(input_size, hidden_dim, n_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, output_size)
 
-    def foward(self):
-        pass
+    def foward(self, x, hidden):
+        batch_size = x.size(0)
+        r_out, hidden = self.rnn(x, hidden)
+        r_out = r_out.view(-1, self.hidden_dim)
+        output = self.fc(r_out)
+        return output, hidden
 
-def main():
-    load_data()
+def gradient():
+    pass
 
-main()
+def optimizer():
+    pass
