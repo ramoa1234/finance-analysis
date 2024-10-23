@@ -1,4 +1,3 @@
-import requests, json
 
 cookies = {
     'split': 'n',
@@ -12,26 +11,29 @@ cookies = {
     'kampyle_userid': 'e221-5cc0-2168-c6f8-7d8e-4df6-9934-1424',
     '__ssn': '8e5a4236-c9f3-4700-b16d-a65c5227a766',
     '__ssnstarttime': '1729657319',
-    '_lr_retry_request': 'true',
-    'criteria': 'sprefix%3D%252Fnewhomecommunities%26area_type%3Dcity%26city%3DWeston%26pg%3D1%26state_code%3DFL%26state_id%3DFL%26loc%3DWeston%252C%2520FL%26locSlug%3DWeston_FL%26county_fips%3D12011%26county_fips_multi%3D12011',
     'AMCVS_8853394255142B6A0A4C98A4%40AdobeOrg': '1',
-    'kampyleUserSession': '1729657321728',
-    'kampyleUserSessionsCount': '8',
-    'kampyleSessionPageCounter': '1',
-    'kampyleUserPercentile': '16.957098653328995',
-    'AMCV_8853394255142B6A0A4C98A4%40AdobeOrg': '-1124106680%7CMCIDTS%7C20020%7CMCMID%7C74817516618400596614988662968578924832%7CMCAID%7CNONE%7CMCOPTOUT-1729664539s%7CNONE%7CvVersion%7C5.2.0',
+    '_lr_retry_request': 'true',
+    'kampylePageLoadedTimestamp': '1729662818256',
+    'kampyleUserSession': '1729662933812',
+    'kampyleUserSessionsCount': '14',
+    'srchID': '27dcddf59b6a43349825a6ec1b65d260',
+    'AMCV_8853394255142B6A0A4C98A4%40AdobeOrg': '-1124106680%7CMCIDTS%7C20020%7CMCMID%7C74817516618400596614988662968578924832%7CMCAID%7CNONE%7CMCOPTOUT-1729670142s%7CNONE%7CvVersion%7C5.2.0',
+    'criteria': 'sprefix%3D%252Fnewhomecommunities%26area_type%3Dcity%26city%3DWeston%26pg%3D1%26state_code%3DFL%26state_id%3DFL%26loc%3DWeston%252C%2520FL%26locSlug%3DWeston_FL%26county_fips%3D12011%26county_fips_multi%3D12011',
+    'kampyleSessionPageCounter': '2',
+    'kampyleUserPercentile': '13.62950558086884',
 }
 
 headers = {
     'accept': 'application/json, text/javascript',
     'accept-language': 'en-US,en;q=0.9',
     'content-type': 'application/json',
-    # 'cookie': 'split=n; split_tcv=109; __vst=a4f46f97-818b-4eb3-be89-6ac10315dcbf; __bot=false; __split=84; _lr_env_src_ats=false; G_ENABLED_IDPS=google; mdLogger=false; kampyle_userid=e221-5cc0-2168-c6f8-7d8e-4df6-9934-1424; __ssn=8e5a4236-c9f3-4700-b16d-a65c5227a766; __ssnstarttime=1729657319; _lr_retry_request=true; criteria=sprefix%3D%252Fnewhomecommunities%26area_type%3Dcity%26city%3DWeston%26pg%3D1%26state_code%3DFL%26state_id%3DFL%26loc%3DWeston%252C%2520FL%26locSlug%3DWeston_FL%26county_fips%3D12011%26county_fips_multi%3D12011; AMCVS_8853394255142B6A0A4C98A4%40AdobeOrg=1; kampyleUserSession=1729657321728; kampyleUserSessionsCount=8; kampyleSessionPageCounter=1; kampyleUserPercentile=16.957098653328995; AMCV_8853394255142B6A0A4C98A4%40AdobeOrg=-1124106680%7CMCIDTS%7C20020%7CMCMID%7C74817516618400596614988662968578924832%7CMCAID%7CNONE%7CMCOPTOUT-1729664539s%7CNONE%7CvVersion%7C5.2.0',
+    # 'cookie': 'split=n; split_tcv=109; __vst=a4f46f97-818b-4eb3-be89-6ac10315dcbf; __bot=false; __split=84; _lr_env_src_ats=false; G_ENABLED_IDPS=google; mdLogger=false; kampyle_userid=e221-5cc0-2168-c6f8-7d8e-4df6-9934-1424; __ssn=8e5a4236-c9f3-4700-b16d-a65c5227a766; __ssnstarttime=1729657319; AMCVS_8853394255142B6A0A4C98A4%40AdobeOrg=1; _lr_retry_request=true; kampylePageLoadedTimestamp=1729662818256; kampyleUserSession=1729662933812; kampyleUserSessionsCount=14; srchID=27dcddf59b6a43349825a6ec1b65d260; AMCV_8853394255142B6A0A4C98A4%40AdobeOrg=-1124106680%7CMCIDTS%7C20020%7CMCMID%7C74817516618400596614988662968578924832%7CMCAID%7CNONE%7CMCOPTOUT-1729670142s%7CNONE%7CvVersion%7C5.2.0; criteria=sprefix%3D%252Fnewhomecommunities%26area_type%3Dcity%26city%3DWeston%26pg%3D1%26state_code%3DFL%26state_id%3DFL%26loc%3DWeston%252C%2520FL%26locSlug%3DWeston_FL%26county_fips%3D12011%26county_fips_multi%3D12011; kampyleSessionPageCounter=2; kampyleUserPercentile=13.62950558086884',
     'dnt': '1',
     'origin': 'https://www.realtor.com',
     'priority': 'u=1, i',
+    'rdc-ab-test-client': 'rdc-search-for-sale',
     'rdc-ab-tests': 'commute_travel_time_variation:v1',
-    'referer': 'https://www.realtor.com/realestateandhomes-search/Weston_FL',
+    'referer': 'https://www.realtor.com/realestateandhomes-search/Weston_FL/pg-2',
     'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"macOS"',
@@ -42,25 +44,47 @@ headers = {
 }
 
 params = {
-    'client_id': 'rdc-search-new-communities',
+    'client_id': 'rdc-search-for-sale-search',
     'schema': 'vesta',
 }
 
+limit = 100
+
 json_data = {
-    'query': '\n  query TransformCommunitySearch($query: CommunitySearchCriteria!, $limit: Int) {\n    community_search(query: $query, limit: $limit) {\n      count\n      total\n      results {\n        source {\n          id\n        }\n        community_metrics {\n          leads_month_to_date\n        }\n        builder {\n          builder_id\n          href\n          name\n          source_builder_id\n          logo {\n            href\n          }\n        }\n        property_id\n        description {\n          name\n          baths_min\n          baths_max\n          beds_max\n          beds_min\n          sqft_max\n          sqft_min\n        }\n        location {\n          address {\n            city\n            state_code\n            postal_code\n          }\n        }\n        list_price_max\n        list_price_min\n        primary_photo(https:true) {\n          description\n          href\n        }\n        photos(limit: 5, https: true) {\n          href\n        }\n        permalink\n      }\n    }\n  }\n',
+    'query': '\n  query ConsumerSearchQuery(\n    $query: HomeSearchCriteria!\n    $limit: Int\n    $offset: Int\n    $search_promotion: SearchPromotionInput\n    $sort: [SearchAPISort]\n    $sort_type: SearchSortType\n    $client_data: JSON\n    $bucket: SearchAPIBucket\n    $mortgage_params: MortgageParamsInput\n  ) {\n    home_search: home_search(\n      query: $query\n      sort: $sort\n      limit: $limit\n      offset: $offset\n      sort_type: $sort_type\n      client_data: $client_data\n      bucket: $bucket\n      search_promotion: $search_promotion\n      mortgage_params: $mortgage_params\n    ) {\n      count\n      total\n      search_promotion {\n        names\n        slots\n        promoted_properties {\n          id\n          from_other_page\n        }\n      }\n      mortgage_params {\n        interest_rate\n      }\n      properties: results {\n        property_id\n        list_price\n        search_promotions {\n          name\n          asset_id\n        }\n        primary_photo(https: true) {\n          href\n        }\n        rent_to_own {\n          right_to_purchase\n          rent\n        }\n        listing_id\n        matterport\n        virtual_tours {\n          href\n          type\n        }\n        status\n        products {\n          products\n          brand_name\n        }\n        source {\n          id\n          type\n          spec_id\n          plan_id\n          agents {\n            office_name\n          }\n        }\n        lead_attributes {\n          show_contact_an_agent\n          opcity_lead_attributes {\n            cashback_enabled\n            flip_the_market_enabled\n          }\n          lead_type\n          ready_connect_mortgage {\n            show_contact_a_lender\n            show_veterans_united\n          }\n        }\n        community {\n          description {\n            name\n          }\n          property_id\n          permalink\n          advertisers {\n            office {\n              hours\n              phones {\n                type\n                number\n                primary\n                trackable\n              }\n            }\n          }\n          promotions {\n            description\n            href\n            headline\n          }\n        }\n        permalink\n        price_reduced_amount\n        description {\n          name\n          beds\n          baths_consolidated\n          sqft\n          lot_sqft\n          baths_max\n          baths_min\n          beds_min\n          beds_max\n          sqft_min\n          sqft_max\n          type\n          sub_type\n          sold_price\n          sold_date\n        }\n        location {\n          street_view_url\n          address {\n            line\n            postal_code\n            state\n            state_code\n            city\n            coordinate {\n              lat\n              lon\n            }\n          }\n          county {\n            name\n            fips_code\n          }\n        }\n        open_houses {\n          start_date\n          end_date\n        }\n        branding {\n          type\n          name\n          photo\n        }\n        flags {\n          is_coming_soon\n          is_new_listing(days: 14)\n          is_price_reduced(days: 30)\n          is_foreclosure\n          is_new_construction\n          is_pending\n          is_contingent\n        }\n        list_date\n        photos(limit: 2, https: true) {\n          href\n        }\n        advertisers {\n          type\n          builder {\n            name\n            href\n            logo\n          }\n        }\n      }\n    }\n\n    commute_polygon: get_commute_polygon(query: $query) {\n      areas {\n        id\n        breakpoints {\n          width\n          height\n          zoom\n        }\n        radius\n        center {\n          lat\n          lng\n        }\n      }\n      boundary\n    }\n  }\n',
     'variables': {
+        'geoSupportedSlug': 'Weston_FL',
         'query': {
-            'sales_builder': True,
+            'primary': True,
+            'status': [
+                'for_sale',
+                'ready_to_build',
+            ],
             'search_location': {
                 'location': 'Weston, FL',
-                'buffer': 20,
             },
         },
-        'limit': 200,
+        'client_data': {
+            'device_data': {
+                'device_type': 'desktop',
+            },
+        },
+        'limit': 42,
+        'offset': 42,
+        'sort_type': 'relevant',
+        'search_promotion': {
+            'names': [
+                'CITY',
+            ],
+            'slots': [],
+            'promoted_properties': [
+                [],
+            ],
+        },
     },
-    'nrQueryType': 'PREMIUM_CARD_SRP',
     'isClient': True,
     'visitor_id': 'a4f46f97-818b-4eb3-be89-6ac10315dcbf',
+    'operationName': 'ConsumerSearchQuery',
 }
 
 response = requests.post(
@@ -72,30 +96,12 @@ response = requests.post(
 )
 
 
-if response.status_code == 200:
-    try:
-        # Parse the JSON response
-        data = response.json()
+data = response.json()
 
-        # Function to recursively search for property_id
-        def find_property_ids(obj):
-            if isinstance(obj, dict):
-                # If it's a dictionary, check each key-value pair
-                for key, value in obj.items():
-                    if key == 'property_id':
-                        print(f"Property ID: {value}")
-                    # Recursively call the function on the value
-                    find_property_ids(value)
-            elif isinstance(obj, list):
-                # If it's a list, iterate over each item
-                for item in obj:
-                    find_property_ids(item)
+# Navigate through the nested structure to get 'total'
+total = data.get('data', {}).get('home_search', {}).get('total')
+count = data.get('data', {}).get('home_search', {}).get('count')
 
-        # Start the search from the root of the JSON data
-        find_property_ids(data)
-    
-    except ValueError as e:
-        print("Error parsing JSON:", e)
+# Print the result
+print(f"The total is: {total}, and the count is {count}")
 
-else:
-    print(f"Request failed with status code {response.status_code}")
