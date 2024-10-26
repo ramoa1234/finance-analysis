@@ -2,7 +2,11 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.post('/api/real_estate')
+async def get_home_item(house_schame):
+    
+    
+    return {
+        "address": house_schema.address,
+        "price": home_price
+    }

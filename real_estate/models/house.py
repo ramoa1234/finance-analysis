@@ -12,5 +12,3 @@ def house_schema(address, price, time_up_for_sale, year_built, bedrooms, bathroo
         'square_feet_lot': square_feet_lot
     }
 
-def test():
-    return('this is a test')
