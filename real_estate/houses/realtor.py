@@ -1,3 +1,4 @@
+import requests
 
 cookies = {
     'split': 'n',
@@ -104,4 +105,56 @@ count = data.get('data', {}).get('home_search', {}).get('count')
 
 # Print the result
 print(f"The total is: {total}, and the count is {count}")
+
+def fetch_all_properties():
+    # Start with an empty list to collect all properties
+    all_properties = []
+    
+    # Get the first response to determine total and count
+    offset = 0
+    limit = 42  # Use the initial limit
+    total = None
+
+    while True:
+        # Update json_data for the current request
+        new_json_data = json_data.copy()
+        new_json_data['variables']['limit'] = limit
+        new_json_data['variables']['offset'] = offset  # Update the offset for pagination
+
+        # Make the request
+        response = requests.post(
+            'https://www.realtor.com/api/v1/rdc_search_srp',
+            params=params,
+            cookies=cookies,
+            headers=headers,
+            json=new_json_data,
+        )
+
+        data = response.json()
+        
+        # Check if data is present and extract properties
+        home_search = data.get('data', {}).get('home_search', {})
+        properties = home_search.get('properties', [])
+        count = home_search.get('count', 0)
+        total = home_search.get('total', 0)
+
+        # Append the properties to the all_properties list
+        all_properties.extend(properties)
+
+        # Break the loop if we've fetched all properties
+        if len(all_properties) >= total:
+            break
+
+        # Update the offset for the next request
+        offset += limit
+
+    return all_properties
+
+# Fetch all properties
+all_properties = fetch_all_properties()
+
+# Print the total number of properties fetched
+print(all_properties[0])
+print(f"Total properties fetched: {len(all_properties)}")
+
 
